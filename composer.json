@@ -1,0 +1,23 @@
+{
+    "name": "spier/logger",
+    "description": "This library will provide logger functionality.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rpurant",
+            "email": "rajpurant19@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/rpurant/logger/issues"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+}
