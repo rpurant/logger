@@ -5,6 +5,7 @@ namespace Spier\Logger;
 
 
 use InvalidArgumentException;
+use RuntimeException;
 
 /**
  * Custom Logging Class to store log information
@@ -50,7 +51,7 @@ class Logger
      */
     public function __construct(string $root = '')
     {
-        if (isset($root)) {
+        if ($root) {
             $this->setLogRoot($root);
         } else {
             $this->setLogRoot($_SERVER['DOCUMENT_ROOT'] . '/logs/');
@@ -142,7 +143,7 @@ class Logger
         $l_file = $this->logFile ?: $log_file_default;
         // open log file for writing only and place file pointer at the end of the file
         // (if the file does not exist, try to create it)
-        $this->fp = fopen($l_file, 'ab') || exit("Can't open $l_file");
+        $this->fp = fopen($l_file, 'ab');
     }
 
     /**
@@ -197,6 +198,9 @@ class Logger
      */
     public function setLogRoot(string $logRoot): void
     {
+        if (!file_exists($logRoot) && !mkdir($logRoot, 755, true) && !is_dir($logRoot)) {
+            throw new RuntimeException(sprintf('Directory "%s" was not created', $logRoot));
+        }
         $this->logRoot = $logRoot;
     }
 
