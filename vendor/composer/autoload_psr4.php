@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Spier\\Logger\\' => array($baseDir . '/src'),
+    'Spier\\Logger\\' => array($baseDir . '/src/Logger'),
 );

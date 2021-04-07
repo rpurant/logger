@@ -16,7 +16,7 @@ class ComposerStaticInitb71e81df149b31c0faff537167427943
     public static $prefixDirsPsr4 = array (
         'Spier\\Logger\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/src/Logger',
         ),
     );
 
