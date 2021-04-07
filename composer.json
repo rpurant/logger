@@ -9,10 +9,15 @@
             "email": "rajpurant19@gmail.com"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "Spier\\Logger\\": "src/Logger"
-        }
+    "support": {
+        "issues": "https://github.com/rpurant/logger/issues"
     },
-    "require": {}
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require": {
+        "php": ">=7.4"
+    }
 }
