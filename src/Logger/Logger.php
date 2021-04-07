@@ -45,6 +45,19 @@ class Logger
     ];
 
     /**
+     * Logger constructor.
+     * @param string $root
+     */
+    public function __construct(string $root = '')
+    {
+        if (isset($root)) {
+            $this->setLogRoot($root);
+        } else {
+            $this->setLogRoot($_SERVER['DOCUMENT_ROOT'] . '/logs/');
+        }
+    }
+
+    /**
      * @param $res
      * DateTime: 30/09/2018 11:17 PM
      * Created By: rpurant
