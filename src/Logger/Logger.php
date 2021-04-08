@@ -78,7 +78,7 @@ class Logger
      * DateTime: 30/09/2018 11:20 PM
      * Created By: rpurant
      */
-    private function logError($err, $file_name): void
+    protected function logError($err, $file_name): void
     {
         $this->lFile($file_name);
         // write message to the log file
